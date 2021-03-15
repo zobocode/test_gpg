@@ -28,7 +28,7 @@
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
-  The Docker image should be stored in GCP Container Registry.
+  The Docker image will be stored in GCP Container Registry.
   
 2. launch the docker container
   ```
@@ -49,16 +49,6 @@ If the curl request is successful, here an example of output:
 ```
 {"caller_info":{"at_hash":"-hhFB5nEB6gZHaDJyJmUaw","aud":"32555940559.apps.googleusercontent.com","azp":"32555940559.apps.googleusercontent.com","email":"gilles.wadriako@loreal.com","email_verified":true,"exp":1615476538,"hd":"loreal.com","iat":1615472938,"iss":"https://accounts.google.com","sub":"115844571050672950277"},"headers":{"Accept":"*/*","Authorization":"Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6Ijg0NjJhNzFkYTRmNmQ2MTFmYzBmZWNmMGZjNGJhOWMzN2Q2NWU2Y2QiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTE1ODQ0NTcxMDUwNjcyOTUwMjc3IiwiaGQiOiJsb3JlYWwuY29tIiwiZW1haWwiOiJnaWxsZXMud2Fkcmlha29AbG9yZWFsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJhdF9oYXNoIjoiLWhoRkI1bkVCNmdaSGFESnlKbVVhdyIsImlhdCI6MTYxNTQ3MjkzOCwiZXhwIjoxNjE1NDc2NTM4fQ.dGvkpbOp9SeAOkneDNYGXL9vYFiTW9ys6oU84CGIOZQkr_vhm4JGIBFibKvJdqYpJYcWLejFjCGH10wFbNlqmgpF8yDmpmd8TwO_YOYLn9tVi2VMiR9DorK_iyJo6R_6ZTYxF3T_S-uC0lJSDLSO7-T7RpNVmcZHz1pNqmF9iXRr6_bYGJP5UE31FlP6cFNSOdJjEvxvjbcWoj2-d5JQVyx892yY5brqLCL0DXp5-eNiEERCaK9nRdZoNaXbLY5K-4vCucyHN9vGCDpMQjS4lPynDwvtwxrrYmd8pEARTtcPGjajQc6pPTWQkdVGvby2Tz4vbDNdvufZf5UEIhleUQ","Host":"0.0.0.0:8080","User-Agent":"curl/7.68.0"},"result":"Hello gilles.wadriako@loreal.com"}
 ```
-
- ## How to customize the module
-
- tbd ...
-
-
- ## How to decline this module
-
- tbd ...
-
 
 ### Components
 
