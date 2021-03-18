@@ -22,16 +22,20 @@ Put the credentials json  file for a service account in the module directory. It
  1. build the docker image
 
 Go into the module directory and run this command:
-  ```
-  BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
-  ```
-  The Docker image will be stored in GCP Container Registry.
+```
+BACK_PROJECT=btdp-sbx-g-wadriako make -f ../../Makefile.module gcr
+```
+The Docker image will be built and stored at in GCP Container Registry.
 
-2. launch the docker container
+2. Run the application locally
+
+From the module directory, run the following command: 
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
-  at this step, the Flask application is running at http://0.0.0.0:8080/
+where ```host.docker.internal``` is your local Docker host's IP address. This set up is only done for local testing purpose; so Google Cloud Run can connect to the postgresql database that run locally.
+
+At this step, the Flask application is running at http://0.0.0.0:8080/ .
 
 3. Test the application
 
