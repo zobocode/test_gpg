@@ -12,6 +12,8 @@
  1. service account credentials
 
 Put the credentials json  file for a service account in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
+
+See [here](https://cloud.google.com/docs/authentication) the Google documentation about credentials and authentication.
   
  2. environment variables
   ```
@@ -33,9 +35,9 @@ From the module directory, run the following command:
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
-where ```host.docker.internal``` is your local Docker host's IP address. This set up is only done for local testing purpose.
+*where ```host.docker.internal``` is your local Docker host's IP address (set up is only done for local testing purpose).*
 
-At this step, the Flask application is running at http://0.0.0.0:8080/ .
+At this step, the Flask application is running at http://0.0.0.0:8080/.
 
 3. Test the application
 
