@@ -11,7 +11,7 @@
  ### Requirements for local testing
  1. service account credentials
 
-  Put the credentials json  file for a service account in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
+Put the credentials json  file for a service account in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
   
  2. environment variables
   ```
@@ -20,7 +20,8 @@
 
  ### Run the test
  1. build the docker image
- Go into the module directory and run this command:
+
+Go into the module directory and run this command:
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
