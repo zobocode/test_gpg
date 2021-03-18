@@ -11,7 +11,7 @@
  ### Requirements for local testing
  1. service account credentials
 
-  Put your credentials json (file must be names 'creds.json') file for a service account in the module directory, to inject the permissions in the Docker image.
+  Put your credentials json (file must be named 'creds.json') file for a service account in the module directory, to inject the permissions in the Docker image.
   
  2. environment variables
   ```
@@ -34,7 +34,7 @@
 
 3. Test the application
 
-To test the application, use a curl request, for example:
+To test the application, use a curl request GET, for example:
 
 ```
 $ curl -X GET -H "Authorization: Bearer $(gcloud auth print-identity-token)" http://0.0.0.0:8080
