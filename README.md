@@ -9,33 +9,28 @@
  ## How to test this module template
 
  ### Requirements for local testing
- 
  1. service account credentials
 
   Put your credentials json file for a service account in the module directory, to inject the permissions in the Docker image.
-  
  2. environment variables
   ```
   export SANDBOX_PROJECT=<your-sandbox-project-name>
   ```
 
  ### Run the test
- 
  1. build the docker image
- 
- Go into the module directory and run this command :
- 
+ Go into the module directory and run this command:
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
   The Docker image will be stored in GCP Container Registry.
-  
+
 2. launch the docker container
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
   at this step, the Flask application is running at http://0.0.0.0:8080/
-  
+
 3. Test the application
 
 To test the application, use a curl request, for example:
@@ -43,7 +38,7 @@ To test the application, use a curl request, for example:
 ```
 $ curl -X GET -H "Authorization: Bearer $(gcloud auth print-identity-token)" http://0.0.0.0:8080
 ```
-where ```$(gcloud auth print-identity-token)``` is the token that allows you to request the application.
+where ```$(gcloud auth print-identity-token)``` is the token that allows the user to request the application.
 
 If the curl request is successful, here an example of output:
 ```
