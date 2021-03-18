@@ -33,7 +33,7 @@ From the module directory, run the following command:
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
-where ```host.docker.internal``` is your local Docker host's IP address. This set up is only done for local testing purpose; so Google Cloud Run can connect to the postgresql database that run locally.
+where ```host.docker.internal``` is your local Docker host's IP address. This set up is only done for local testing purpose.
 
 At this step, the Flask application is running at http://0.0.0.0:8080/ .
 
