@@ -1,5 +1,46 @@
 # Module Flask GCR Template
 
+ ## Project tree
+
+```
+.
+├── creds.json
+├── Dockerfile
+├── iac
+│   └── main.tf
+├── README.md
+├── requirements-test.txt
+├── requirements.txt
+├── run.sh
+├── src
+│   ├── application.py
+│   ├── application_test.py
+│   ├── default_controller
+│   │   ├── controller.py
+│   │   ├── controller_test.py
+│   │   ├── __init__.py
+│   │   └── __pycache__
+│   │       ├── controller.cpython-38.pyc
+│   │       ├── controller_test.cpython-38-pytest-6.2.2.pyc
+│   │       └── __init__.cpython-38.pyc
+│   ├── main.py
+│   ├── main_test.py
+│   ├── __pycache__
+│   │   ├── application.cpython-38.pyc
+│   │   ├── application_test.cpython-38-pytest-6.2.2.pyc
+│   │   ├── main.cpython-38.pyc
+│   │   └── main_test.cpython-38-pytest-6.2.2.pyc
+│   └── wrappers
+│       ├── blueprint_factory.py
+│       ├── blueprint_factory_test.py
+│       ├── __init__.py
+│       └── __pycache__
+│           ├── blueprint_factory.cpython-38.pyc
+│           ├── blueprint_factory_test.cpython-38-pytest-6.2.2.pyc
+│           └── __init__.cpython-38.pyc
+└── test_env.sh
+```
+
  ## Purpose
 
  This document aims to give information on the current module. This module is dedicated to be used as a template for building a Google Cloud Run application. This solution uses the Python Framework Flask.
