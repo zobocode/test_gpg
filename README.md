@@ -44,7 +44,7 @@ If needed, run the command below to obtain a credentials file:
 gcloud iam service-accounts keys create ~/creds.json \
   --iam-account system@PROJECT_ID.iam.gserviceaccount.com
 ```
-*where PROJECT_ID is the Sandbox project ID e.g ```btdp-sbx-g-wadriako```
+*where ```PROJECT_ID``` is the Sandbox project ID e.g ```btdp-sbx-g-wadriako```
 *. And then place the ```creds.json``` file at the root of the module directory.
 
 *See [here](https://cloud.google.com/docs/authentication) the Google documentation about credentials and authentication.*
