@@ -80,7 +80,7 @@ To test the application, use a curl request GET, for example:
 ```
 $ curl -X GET -H "Authorization: Bearer $(gcloud auth print-identity-token)" http://0.0.0.0:8080
 ```
-where ```$(gcloud auth print-identity-token)``` is the token that allows the user to request the application.
+where ```$(gcloud auth print-identity-token)``` is the token string that allows the user to request the application.
 
 If the curl request is successful, here an example of output:
 ```
