@@ -1,44 +1,29 @@
 # Module Flask GCR Template
 
- ## Project tree
-
-```
-.
-├── creds.json
-├── Dockerfile
-├── iac
-│   └── main.tf
-├── README.md
-├── requirements-test.txt
-├── requirements.txt
-├── run.sh
-├── src
-│   ├── application.py
-│   ├── application_test.py
-│   ├── default_controller
-│   │   ├── controller.py
-│   │   ├── controller_test.py
-│   │   ├── __init__.py
-│   │   └── __pycache__
-│   │       ├── controller.cpython-38.pyc
-│   │       ├── controller_test.cpython-38-pytest-6.2.2.pyc
-│   │       └── __init__.cpython-38.pyc
-│   ├── main.py
-│   ├── main_test.py
-│   ├── __pycache__
-│   │   ├── application.cpython-38.pyc
-│   │   ├── application_test.cpython-38-pytest-6.2.2.pyc
-│   │   ├── main.cpython-38.pyc
-│   │   └── main_test.cpython-38-pytest-6.2.2.pyc
-│   └── wrappers
-│       ├── blueprint_factory.py
-│       ├── blueprint_factory_test.py
-│       ├── __init__.py
-│       └── __pycache__
-│           ├── blueprint_factory.cpython-38.pyc
-│           ├── blueprint_factory_test.cpython-38-pytest-6.2.2.pyc
-│           └── __init__.cpython-38.pyc
-└── test_env.sh
+ ## Module tree
+ ```
+── module-simple-tpl-gcr                        //Module Template to build a Cloud run appilcation using IoC
+    ├── creds.json                              //Service account Credentials file
+    ├── Dockerfile                              //Docker configuration file to assemble the image
+    ├── iac
+    │   └── main.tf                             //Terraform configuration file for the GCP Infrastrcucture as code
+    ├── README.md
+    ├── requirements.txt                        //File specifying what python packages are required to run the project
+    ├── run.sh                                  //Shell script to launch the application in production using GUNICORN Webserver
+    ├── src
+    │   ├── application.py                      //Module to set up API blueprint, controllers, services, providers and ORM
+    │   ├── application_test.py
+    |   ├── main.py                             //Main module of the application 
+    │   ├── main_test.py                        //Python file for unit testing
+    │   ├── default_controller
+    │   │   ├── controller.py                   //Module to define the application routing
+    │   │   ├── controller_test.py              //Python file for unit testing
+    │   │   ├── __init__.py
+    │   └── wrappers
+    │       ├── blueprint_factory.py            //Module to define the flask blueprint decorator
+    │       ├── blueprint_factory_test.py       //Python file for unit testing
+    │       ├── __init__.py
+    └── test_env.sh
 ```
 
  ## Purpose
@@ -54,8 +39,15 @@
 
 Put the credentials json  file for a service account in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
 
-See [here](https://cloud.google.com/docs/authentication) the Google documentation about credentials and authentication.
-  
+If needed, run the command below to obtain a credentials file:
+```
+gcloud iam service-accounts keys create ~/creds.json \
+  --iam-account system@PROJECT_ID.iam.gserviceaccount.com
+```
+*where PROJECT_ID is the Sandbox project ID*. And then place the ```creds.json``` file at the root of the module directory.
+
+*See [here](https://cloud.google.com/docs/authentication) the Google documentation about credentials and authentication.*
+
  2. environment variables
   ```
   export SANDBOX_PROJECT=<your-sandbox-project-name>
@@ -72,7 +64,7 @@ The Docker image will be built and stored at in GCP Container Registry.
 
 2. Run the application locally
 
-From the module directory, run the following command: 
+From the module directory, run the following command:
   ```
   BACK_PROJECT=$SANDBOX_PROJECT SANDBOX_DB_HOST=host.docker.internal make -f ../../Makefile.module local-test
   ```
