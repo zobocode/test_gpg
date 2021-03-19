@@ -37,7 +37,7 @@
  ### Requirements for local testing
  1. service account credentials
 
-Put the credentials json  file for a service account in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
+Put the service account credentials file (.json) in the module directory. It is mandatory to inject the permissions in the Docker image. The credentials file must be named 'creds.json'.
 
 If needed, run the command below to obtain a credentials file:
 ```
